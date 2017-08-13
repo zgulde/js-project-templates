@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -e
+
+function show_help {
+    echo 'Usage:'
+    echo "    $0 <template-name> <destination>"
+    echo
+    echo 'Where <template-name> is one of:'
+    echo '  - json-server-webpack'
+    echo '  - json-server-webpack-sass'
+    echo '  - lumo'
+    echo '  - webpack'
+    echo 'And <destination> is the name of the directory to be created.'
+}
+
+if [[ $1 = --help ]] || [[ $1 = -h ]] || [[ $1 = help ]]; then
+    show_help
+    exit 1
+fi
+
+if [[ -L $0 ]]; then
+    BASE_DIR="$(dirname $(readlink $0))"
+else
+    BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
+fi
+
+cd $BASE_DIR
+
+template_name=$1
+destination=$2
+
+if [[ -z $template_name ]] || [[ -z $destination ]]; then
+    echo 'Error: missing template name or destination. (See --help)'
+    exit 1
+fi
+
+if [[ -e $destination ]]; then
+    echo "Error: $destination already exists. (See --help)"
+    exit 1
+fi
+
+template_dir="$BASE_DIR/templates/$template_name"
+
+if [[ ! -d $template_dir ]]; then
+    echo "Error: template $template_name does not exist"
+    exit 1
+fi
+
+cp -r $template_dir $destination
