@@ -6,6 +6,12 @@ else
     BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 fi
 
+# FIXME: change this to your project name
+main=my-project
+
+# change this to determine which main function will run
+ns=core
+
 cd $BASE_DIR
 
-$BASE_DIR/node_modules/.bin/lumo $BASE_DIR/my_project/core.cljs $@
+$BASE_DIR/node_modules/.bin/lumo -c src -m "${main}.${ns}" $@
