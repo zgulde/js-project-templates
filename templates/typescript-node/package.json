@@ -1,0 +1,35 @@
+{
+  "name": "todoist-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "lint": "tslint 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.0",
+    "jest": "^21.1.0",
+    "requests": "^0.2.2",
+    "ts-jest": "^21.0.1",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": "tsconfig.json"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.(ts|js)"
+    ],
+    "testEnvironment": "node"
+  }
+}

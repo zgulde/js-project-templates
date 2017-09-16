@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "ES2017",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "pretty": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/**/*.test.ts"
+  ]
+}
