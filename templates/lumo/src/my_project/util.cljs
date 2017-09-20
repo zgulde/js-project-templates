@@ -1,4 +1,5 @@
 (ns my-project.util
+  ;; FIXME: change my-project to your project's name
   (:require [clojure.string :as string]))
 
 (defn colorize [text code] (str "\033[01;" code "m" text "\033[0m"))
