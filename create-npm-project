@@ -10,9 +10,9 @@ function show_help {
     echo '  - json-server-webpack'
     echo '  - json-server-webpack-sass'
     echo '  - lumo'
-    echo '  - webpack'
     echo '  - typescript-node'
-    echo 'And <destination> is the name of the directory to be created.'
+    echo '  - webpack'
+    echo 'And <destination> is the name of the (non-existant) directory to be created'
 }
 
 if [[ $1 = --help ]] || [[ $1 = -h ]] || [[ $1 = help ]]; then
