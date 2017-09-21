@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "lint": "tslint 'src/**/*.ts'"
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "concurrently": "^3.5.0",
